@@ -30,8 +30,6 @@ def part_2():
     lines = read_file_part2()
     nums = []
     for line in lines:
-        first_digit = ""
-        last_digit = ""
         line_nums = []
         for i, num in enumerate(line):
             if num.isdigit():
