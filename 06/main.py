@@ -22,9 +22,11 @@ def part1():
     times, distances = read_input()
     winning = [0 for _ in times]
     for race, time in enumerate(times):
-        top = math.floor(((time) + math.sqrt(time**2 - 4 * distances[race])) / 2)
-        bot = math.ceil(((time) - math.sqrt(time**2 - 4 * distances[race])) / 2)
-
+        top = math.floor(
+            ((time) + math.sqrt(time**2 - 4 * distances[race])) / 2 - 0.1
+        )
+        bot = math.ceil(((time) - math.sqrt(time**2 - 4 * distances[race])) / 2 + 0.1)
+        # print(top, bot)
         winning[race] = top - bot + 1
     print(math.prod(winning))
 
