@@ -49,14 +49,7 @@ def part2():
     _, nodes = read_input()
     current_nodes = [node for node in nodes.keys() if node[-1] == "A"]
     current_nodes_steps = [get_node_steps(node) for node in current_nodes]
-
-    dividers = set()
-    for steps in current_nodes_steps:
-        for i in range(2, steps // 2):
-            if steps % i == 0:
-                dividers.add(i)
-
-    print(math.prod(dividers))
+    print(math.lcm(*current_nodes_steps))
 
 
 if __name__ == "__main__":
